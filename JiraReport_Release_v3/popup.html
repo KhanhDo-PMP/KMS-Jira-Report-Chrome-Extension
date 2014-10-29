@@ -1,0 +1,146 @@
+<html>
+   <head>
+      <title>Sprint Report</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+      <script type="text/javascript" src="popup.js"></script>
+      <style type="text/css">
+         <!--
+            body
+            {
+            min-width: 500px;
+			height:auto;
+			overflow:auto; 
+            }
+			
+            h2,h3{
+				color:#e86032;
+            }
+            .tftable
+            	{font-size:15px;
+            	color:#333333;
+            	width:100%;
+            	min-width: 600px;
+            	width:600px;
+            	border-width:1px;
+            	border-color:#729ea5;
+            	border-collapse:collapse}
+            .tftable th
+            	{font-size:15px;
+            	background-color:#acc8cc;
+            	border-width:1px;
+            	padding:8px;
+            	border-style:solid;
+            	border-color:#729ea5;
+            	text-align:center}
+            .tftable tr
+            	{background-color:#d4e3e5}
+            .tftable td
+            	{font-size:15px;
+            	border-width:1px;
+            	padding:8px;
+            	border-style:solid;
+            	border-color:#729ea5}
+            .tftable tr:hover
+            	{background-color:#ffffff}
+            -->
+      </style>
+   </head>
+   <body>
+      <h2 align="center">KMS Sprint Report</h2>
+      <form id='bind_data_form'>
+	    <h3 align="center"  id='plan_mode_title'>KMS Scrum - Sprint Point - Plan mode</h3>
+         <div id="plan_mode">
+            <table class="tftable" border="1">
+               <tbody>
+                  <tr>
+                     <th>Status</th>
+                     <th>Sprint Point(s)</th>
+                  </tr>
+                  <tr>
+                     <td align="right">Not Started</td>
+                     <td><a id='pointNotStarted' name='pointNotStarted' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td align="right">In Progress</td>
+                     <td><a id='pointInProgress' name='pointInProgress' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td align="right">Done</td>
+                     <td><a id='pointDone' name='pointDone' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td align="right"><b>Total</b></td>
+                     <td><b><a id='pointTotal' name='pointTotal' value='0'>0</a></b></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+		 <h3 align="center"  id='work_mode_title'>KMS - Sprint Point - Sprint Bug - Work mode</h3>
+         <div id='work_mode'>
+            <table class="tftable" border="1">
+               <tbody>
+                  <tr>
+                     <th>Status</th>
+                     <th>Story Points</th>
+                     <th># Tickets</th>
+                  </tr>
+                  <tr>
+                     <td><b>Completed Issues</b></td>
+                     <td><b><a id='pointbugdone' name='pointbugdone' value='0'>0</a></b></td>
+                     <td><b><a id='bugdone' name='bugdone' value='0'>0</a></b></td>
+                  </tr>
+                  <tr>
+                     <td><b>Issues Not Completed</b></td>
+                     <td><b><a id='point_bug_not_completed' name='point_bug_not_completed' value='0'>0</a></b></td>
+                     <td><b><a id='bug_not_completed' name='bug_not_completed' value='0'>0</a></b></td>
+                  </tr>
+                  <tr>
+                     <td>Open</td>
+                     <td><a id='pointbugtodo' name='pointbugtodo' value='0'>0</a></td>
+                     <td><a id='bugtodo' name='bugtodo' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td>In Progress</td>
+                     <td><a id='pointbugimplementation' name='pointbugimplementation' value='0'>0</a></td>
+                     <td><a id='bugimplementation' name='bugimplementation' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td>Stakeholder Verification</td>
+                     <td><a id='pointbugstakeholder' name='pointbugstakeholder' value='0'>0</a></td>
+                     <td><a id='bugstakeholder' name='bugstakeholder' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td>QA Testing</td>
+                     <td><a id='pointbugqa' name='pointbugqa' value='0'>0</a></td>
+                     <td><a id='bugqa' name='bugqa' value='0'>0</a></td>
+                  </tr>
+                  <tr>
+                     <td><b>Total</b></td>
+                     <td><b><a id='pointbugtotal' name='pointbugtotal' value='0'>0</a></b></td>
+                     <td><b><a id='bugtotal' name='bugtotal' value='0'>0</a></b></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+		 
+		  <h3 align="center"  id='qa_title'>KMS Sharecare Regression Testing Status Page</h3>
+         <div id='qa_mode'>
+            <table class="tftable" border="1" id="myRegressionTable">
+               <tbody>
+                  <tr>
+				    <th>No</th>
+                     <th>Feature</th>
+                     <th>Bugs</th>
+                  </tr>
+
+ 
+               </tbody>
+            </table>
+         </div>
+      </form>
+      <p><small>Developed by <a href="http://vn.linkedin.com/in/khanhdo1214/" title='Khanh Do' target="_blank">
+         Khanh Do</a></small>
+		       <p><small><a>Note: Switch Plan mode or Work mode to reload data</a></small>
+      </p>
+   </body>
+</html>
