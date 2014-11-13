@@ -213,20 +213,23 @@ function bind_data() {
 window.addEventListener('DOMContentLoaded', function(evt) {
  document.getElementById("plan_mode_title").addEventListener('click',plan_toggle_visibility);
   document.getElementById("work_mode_title").addEventListener('click',work_toggle_visibility);
-   document.getElementById("qa_title").addEventListener('click',qa_toggle_visibility);
+  document.getElementById("qa_title").addEventListener('click',qa_toggle_visibility);
+   
     document.getElementById('bind_data_form').addEventListener('submit', bind_data);
-    chrome.extension.getBackgroundPage().getPageInfo(onPageInfo);
+	
+	if (chrome.extension.getBackgroundPage() == null || typeof(chrome.extension.getBackgroundPage()) === 'undefined' ) {
+	window.location.reload(true)
+	 console.log(chrome.extension.getBackgroundPage());
+	}
+	if(typeof(chrome.extension.getBackgroundPage()) != 'undefined' && chrome.extension.getBackgroundPage() != null)
+	{
+		if(typeof(chrome.extension.getBackgroundPage().getPageInfo(onPageInfo)) != 'undefined' && chrome.extension.getBackgroundPage().getPageInfo(onPageInfo) != null){
+		chrome.extension.getBackgroundPage().getPageInfo(onPageInfo);
+		console.log(chrome.extension.getBackgroundPage().getPageInfo(onPageInfo));
+		}
+	}
 
 });
-
-
-// When the popup HTML has loaded
-// window.addEventListener('load', function(evt) {
-	// document.getElementById("plan_mode_title").addEventListener('click',plan_toggle_visibility);
-	// document.getElementById("work_mode_title").addEventListener('click',work_toggle_visibility);
-    // document.getElementById('bind_data_form').addEventListener('submit', bind_data);
-    // chrome.extension.getBackgroundPage().getPageInfo(onPageInfo);
-// });
 
   function plan_toggle_visibility() {
    var e=document.getElementById('plan_mode');

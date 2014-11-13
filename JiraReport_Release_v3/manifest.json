@@ -3,14 +3,14 @@
 {
   "name": "Jira Sprint Report",
   "description": "Jira Sprint Report - Developed by Khanh Do",
-  "version": "3.0",
+  "version": "3.10",
   "permissions": [
     "tabs",
 	"https://arnoldmedia.jira.com/*"
   ],
   "background": {
     "scripts": ["background.js"],
-    "persistent": true
+    "persistent": false
   },
   "content_scripts": [{
          "matches": ["http://*/*"],

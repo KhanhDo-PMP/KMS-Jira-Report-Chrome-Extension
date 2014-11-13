@@ -154,7 +154,7 @@ var planView=document.querySelectorAll("#plan-toggle.aui-button.active" ).length
 	 
 
 if(workView==0 &&  planView==0){
- var totaltable = document.querySelectorAll("table")
+ var totaltable = document.querySelectorAll("table");
 
 var get_tableid = "";
 var myVar = "";
