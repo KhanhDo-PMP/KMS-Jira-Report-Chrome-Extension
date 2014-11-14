@@ -24,7 +24,11 @@ function onPageInfo(o) {
 		
 		document.getElementById('qa_title').style.display = 'none'; 
 		document.getElementById('qa_mode').style.display = 'none'; 
-		
+		 
+		document.getElementById('work_mode_title').style.display = 'block'; 
+		document.getElementById('work_mode').style.display = 'block'; 
+		document.getElementById('noft_mode').style.display = 'none'; 
+		document.getElementById('noft_title').style.display = 'none'; 
     }
 
     if (o.pointbugtodo === undefined || o.pointbugtodo === null ||
@@ -52,6 +56,11 @@ function onPageInfo(o) {
 		
 		document.getElementById('qa_title').style.display = 'none'; 
 		document.getElementById('qa_mode').style.display = 'none'; 
+		
+		document.getElementById('work_mode_title').style.display = 'block'; 
+		document.getElementById('work_mode').style.display = 'block'; 
+		document.getElementById('noft_mode').style.display = 'none'; 
+		document.getElementById('noft_title').style.display = 'none'; 
     }
 
     // Plan mode	
@@ -69,10 +78,16 @@ function onPageInfo(o) {
     document.getElementById('pointDone').innerText = o.pointDone;
     document.getElementById('pointTotal').innerText = o.pointTotal;
 	
+	document.getElementById('plan_mode_title').style.display = 'block'; 
+	document.getElementById('plan_mode').style.display = 'block'; 
+		
 	document.getElementById('qa_title').style.display = 'none'; 
 	document.getElementById('qa_mode').style.display = 'none'; 
 	document.getElementById('work_mode_title').style.display = 'none'; 
 	document.getElementById('work_mode').style.display = 'none'; 
+	
+	document.getElementById('noft_mode').style.display = 'none'; 
+	document.getElementById('noft_title').style.display = 'none'; 
 		
 	}
 	if (o.features === undefined || o.totaltickets === undefined){
@@ -83,8 +98,6 @@ function onPageInfo(o) {
 	var arrTicket=o.totaltickets.split(";");
 	var arrfeatures=o.features.split(";");
 	
-	//document.getElementById('features').innerText = o.features;
-   // document.getElementById('totaltickets').innerText =arrTicket;
 	var table = document.getElementById("myRegressionTable");
 	var totalTicket=0;
 	 for(i=0;i<arrTicket.length;i++)
@@ -124,12 +137,18 @@ function onPageInfo(o) {
 		
 		row.style.backgroundColor="#acc8cc"; 
 		row.style.fontWeight = "bold";
-		 
+		document.getElementById('qa_title').style.display = 'block'; 
+		document.getElementById('qa_mode').style.display = 'block'; 
+		
 		document.getElementById('plan_mode_title').style.display = 'none'; 
 		document.getElementById('work_mode_title').style.display = 'none'; 
 		document.getElementById('plan_mode').style.display = 'none'; 
-		document.getElementById('work_mode').style.display = 'none'; 		
+		document.getElementById('work_mode').style.display = 'none'; 	
+		document.getElementById('noft_mode').style.display = 'none'; 
+		document.getElementById('noft_title').style.display = 'none'; 		
 		}
+
+		
 	
 }
 
@@ -214,10 +233,11 @@ window.addEventListener('DOMContentLoaded', function(evt) {
  document.getElementById("plan_mode_title").addEventListener('click',plan_toggle_visibility);
   document.getElementById("work_mode_title").addEventListener('click',work_toggle_visibility);
   document.getElementById("qa_title").addEventListener('click',qa_toggle_visibility);
+   document.getElementById("noft_title").addEventListener('click',noft_toggle_visibility); 
    
     document.getElementById('bind_data_form').addEventListener('submit', bind_data);
 	
-	if (chrome.extension.getBackgroundPage() == null || typeof(chrome.extension.getBackgroundPage()) === 'undefined' ) {
+	if (chrome.extension.getBackgroundPage() == null || typeof(chrome.extension.getBackgroundPage()) === 'undefined' ) {	
 	window.location.reload(true)
 	 console.log(chrome.extension.getBackgroundPage());
 	}
@@ -225,7 +245,15 @@ window.addEventListener('DOMContentLoaded', function(evt) {
 	{
 		if(typeof(chrome.extension.getBackgroundPage().getPageInfo(onPageInfo)) != 'undefined' && chrome.extension.getBackgroundPage().getPageInfo(onPageInfo) != null){
 		chrome.extension.getBackgroundPage().getPageInfo(onPageInfo);
-		console.log(chrome.extension.getBackgroundPage().getPageInfo(onPageInfo));
+		}else{
+		document.getElementById('plan_mode_title').style.display = 'none'; 
+		document.getElementById('work_mode_title').style.display = 'none'; 
+		document.getElementById('plan_mode').style.display = 'none'; 
+		document.getElementById('work_mode').style.display = 'none'; 
+		document.getElementById('qa_title').style.display = 'none'; 
+		document.getElementById('qa_mode').style.display = 'none'; 
+		document.getElementById('noft_mode').style.display = 'block'; 
+		document.getElementById('noft_title').style.display = 'block'; 
 		}
 	}
 
@@ -255,4 +283,12 @@ window.addEventListener('DOMContentLoaded', function(evt) {
           e.style.display = 'block';
      
    }
-   
+    function noft_toggle_visibility() {
+   var e=document.getElementById('noft_mode');
+	 if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+     
+   }
+
