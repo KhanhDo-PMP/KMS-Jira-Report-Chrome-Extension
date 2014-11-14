@@ -3,7 +3,7 @@
 {
   "name": "KMS - Sharecare Jira Report",
   "description": "KMS - Sharecare Jira Report - Developed by Khanh Do",
-  "version": "3.11",
+  "version": "3.12",
   "permissions": [
     "tabs",
 	"https://arnoldmedia.jira.com/*"

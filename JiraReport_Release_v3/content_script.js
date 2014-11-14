@@ -156,7 +156,7 @@ var planView=document.querySelectorAll("#plan-toggle.aui-button.active" ).length
 if(workView==0 &&  planView==0){
  var totaltable = document.querySelectorAll("table");
 
-var get_tableid = "";
+var get_tableid = -1;
 var myVar = "";
 for (i = 0; i < totaltable.length; i++) {
     myVar = document.querySelectorAll("table [data-column='0']")[i].innerText;
@@ -168,8 +168,10 @@ for (i = 0; i < totaltable.length; i++) {
 
     }
 }
-
-var totalrow = totaltable[get_tableid].querySelectorAll("tbody tr td");
+var totalrow=0;
+if(get_tableid!=-1){
+totalrow = totaltable[get_tableid].querySelectorAll("tbody tr td");
+}
  var ticket =0;
  var arrTicket="";
  i=4;
@@ -200,7 +202,7 @@ while (j < totalrow.length) {
 arrTicket=arrTicket.substr(1,arrTicket.length);
 features=features.substr(1,features.length);
 
-var totalticket = totaltable[get_tableid].querySelectorAll("tbody tr .jira-issue-key").length;
+//var totalticket = totaltable[get_tableid].querySelectorAll("tbody tr .jira-issue-key").length;
 var pageInfo = {
 				"totaltickets": arrTicket,	
 				"features": features
