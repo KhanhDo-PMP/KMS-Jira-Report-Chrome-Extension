@@ -159,7 +159,7 @@ if(workView==0 &&  planView==0){
 var get_tableid = -1;
 var myVar = "";
 for (i = 0; i < totaltable.length; i++) {
-    myVar = document.querySelectorAll("table [data-column='0']")[i].innerText;
+    myVar = document.querySelectorAll("table")[i].innerText;
 
     var n = myVar.indexOf('Regression Test');
     if (n == 0) {
